@@ -45,7 +45,6 @@ class AddPhotoActivity : AppCompatActivity() {
         //Open the album
         var photoPickerIntent = Intent(Intent.ACTION_PICK)
         photoPickerIntent.type = "image/*"
-        //startActivityForResult(photoPickerIntent, PICK_IMAGE_FROM_ALBUM)
         startForResult.launch(photoPickerIntent)
 
 
@@ -121,26 +120,13 @@ class AddPhotoActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == PICK_IMAGE_FROM_ALBUM){
-//            if(resultCode == RESULT_OK){
-//                //This is path to the selected image
-//                photoUri = data?.data
-//                addphoto_image.setImageURI(photoUri)
-//            }else{
-//                finish()
-//            }
-//        }
-//    }
-
     //업로드
     @SuppressLint("SimpleDateFormat")
     fun contentUpload(){
         //Make filename
         var timestamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         var imageFileName = "IMAGE_" + timestamp + "_.png"
-        var storageRef = storage?.reference?.child("imagers")?.child(imageFileName)
+        var storageRef = storage?.reference?.child("images")?.child(imageFileName)
 
         //Promise method
         storageRef?.putFile(photoUri!!)?.continueWithTask { task: Task<UploadTask.TaskSnapshot> ->
@@ -169,35 +155,6 @@ class AddPhotoActivity : AppCompatActivity() {
 
             finish()
         }
-
-        //Callback method
-        /*storageRef?.putFile(photoUri!!)?.addOnSuccessListener {
-            storageRef.downloadUrl.addOnSuccessListener { uri ->
-                var contentDTO = ContentDTO()
-
-                //Insert download of image
-                contentDTO.imageUrl = uri.toString()
-
-                //Insert uid of user
-                contentDTO.uid = auth?.currentUser?.uid
-
-                //Insert userId
-                contentDTO.userId = auth?.currentUser?.email
-
-                //Insert explain of content
-                contentDTO.explain = addphoto_edit_explain.text.toString()
-
-                //Insert timestamp
-                contentDTO.timestamp = System.currentTimeMillis().toString()
-
-                firestore?.collection("images")?.document()?.set(contentDTO)
-
-                setResult(Activity.RESULT_OK)
-
-                finish()
-
-            }
-        }*/
 
     }
 }

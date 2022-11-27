@@ -34,27 +34,9 @@ class GridFragment : Fragment(){
         val fragmentManager : FragmentManager
         var fragmentTransaction : FragmentTransaction
 
-//        val fragment = UserFragment()
-//        fragmentTransaction.add(R.id.frgment_user, fragment)
-//        fragmentTransaction.commit()
-
         firestore = FirebaseFirestore.getInstance()
         uid = FirebaseAuth.getInstance().currentUser?.uid
 
-//        viewGroup.plus_icon.setOnClickListener {
-//            val builder = AlertDialog.Builder(this.context)
-//            builder.setTitle("디데이")
-//                    .setMessage("디데이를 추가 하시겠습니까?")
-//                    .setNegativeButton("취소", DialogInterface.OnClickListener { dialogInterface, i ->
-//                        plus_icon.visibility = View.GONE
-//                    })
-//                    .setPositiveButton("추가", DialogInterface.OnClickListener { dialogInterface, i ->
-//                        plus_icon.visibility = View.VISIBLE
-//                    })
-//            builder.show()
-//        }
-
-        viewGroup.detailviewfragment_recyclerview.adapter = D_dayRecyclerViewAdater()
         viewGroup.detailviewfragment_recyclerview.layoutManager = LinearLayoutManager(activity)
 
         viewGroup.detailviewfragment_recyclerview?.smoothScrollToPosition(0)
@@ -87,10 +69,6 @@ class GridFragment : Fragment(){
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             var viewholder = (holder as CustomViewHolder).itemView
             var spinner: Spinner
-
-//            viewholder.plus_icon.setOnClickListener { view ->
-//
-//        }
         }
 
         override fun getItemCount(): Int {
