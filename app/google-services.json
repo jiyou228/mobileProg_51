@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1073687666439",
+    "project_id": "boogiestagram-3d971",
+    "storage_bucket": "boogiestagram-3d971.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073687666439:android:06156d961b8031653cafa2",
+        "android_client_info": {
+          "package_name": "com.example.boogiestagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073687666439-1v8svhml1400ugj9sgf5a8s659d3gfj3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrzbNUHasA4kUGmz1-59swtcZQeCQ1g24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073687666439-1v8svhml1400ugj9sgf5a8s659d3gfj3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

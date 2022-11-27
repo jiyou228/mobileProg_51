@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 유저정보 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:id="@+id/detailviewitem_profile_image"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="35dp"
+            android:layout_height="35dp"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="14dp"
+            android:id="@+id/detailviewitem_profile_textview"
+            android:text="@string/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- 컨텐츠 -->
+    <ImageView
+        android:id="@+id/detailviewitem_imageview_content"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+
+    <!-- 좋아요 부분 -->
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/favorite_animationView"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@color/white"
+            app:lottie_fileName="heart.json"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false" />
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/detailviewitem_favorite_imageview"-->
+        <!--            android:src="@drawable/ic_favorite_border"-->
+        <!--            android:layout_width="25dp"-->
+        <!--            android:layout_height="35dp"/>-->
+
+        <ImageView
+            android:id="@+id/detailviewitem_comment_imageview"
+            android:src="@drawable/ic_chat_black"
+            android:layout_width="25dp"
+            android:layout_height="35dp"/>
+    </LinearLayout>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/detailviewitem_favoritecount_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="좋아요 0 개"/>
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/detailviewitem_explan_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="내가 쓴글"/>
+
+</LinearLayout>
