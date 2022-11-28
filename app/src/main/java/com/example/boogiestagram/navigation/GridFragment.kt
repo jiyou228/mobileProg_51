@@ -37,7 +37,7 @@ class GridFragment : Fragment(){
         firestore = FirebaseFirestore.getInstance()
         uid = FirebaseAuth.getInstance().currentUser?.uid
 
-        viewGroup.detailviewfragment_recyclerview.layoutManager = LinearLayoutManager(activity)
+        //viewGroup.detailviewfragment_recyclerview.layoutManager = LinearLayoutManager(activity)
 
         viewGroup.detailviewfragment_recyclerview?.smoothScrollToPosition(0)
         return viewGroup
